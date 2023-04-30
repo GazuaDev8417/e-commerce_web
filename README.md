@@ -1,4 +1,4 @@
-# Projet E-commerce
+# Projeto E-commerce
 
 Simulador de marketplace com carrinho, card de produtos e filtro para busca
-https://gamy-alarm.surge.sh/
+> https://e-commerce-p17g.onrender.com/
