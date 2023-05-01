@@ -2,7 +2,7 @@ const minValue = document.querySelector('#minValue')
 const maxValue = document.querySelector('#maxValue')
 const searchByName = document.querySelector('#searchByName')
 const sortSelect = document.querySelector('#sort-select')
-const url = 'https://e-commerce-server-chi.vercel.app/'
+const url = 'https://e-commerce-server-chi.vercel.app'
 
 
 
