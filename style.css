@@ -1,0 +1,79 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 16px;
+    margin: 0;
+    @media(max-width: 700px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+div .filters{
+    width: 300px;
+    margin-left: 0;
+}
+
+select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div .shoppingCart{
+    width: 260px;
+}
+
+.products-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    @media(max-width: 700px){
+        text-align: center;
+    }
+}
+
+.producsts-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+    @media(max-width: 600px){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    @media(max-width: 700px){
+        img {
+            height: 200px;
+        }
+    }
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.addToCart-btn{
+    align-self: center;
+    margin-top: 4px;
+}
+
+.cart-container{
+    display: grid;
+    gap: 8px;
+}
+
+.item-container{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 4px;
+    align-items: center;
+}
