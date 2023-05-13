@@ -157,8 +157,9 @@ const onRemoveProductFromCart = (productId) => {
 
 const getProductsInCart = ()=>{
     fetch(`${url}/cart`).then(res => res.json()).then(data=>{
-        document.getElementById('cartContainer').innerHTML = data.map(product=>{
+        document.getElementById('cartContainer').innerHTML = data.reduce((accumulator ,product)=>{
             return `
+            ${accumulator}
             <div class='item-container'>
             <p>${product.quantity}x ${product.name}</p>
             <button class='btn btn-dark'
@@ -167,7 +168,7 @@ const getProductsInCart = ()=>{
             </button>
             </div>
             `
-        })
+        }, '')
         
         let totalValue = 0
 
