@@ -23,12 +23,14 @@ const getProducts = ()=>{
                     <div class='border border-3 rounded card-container'>
                         <img src=${product.photo} width=350 alt="Imagem do produto">
                         <div class='card-info'>
-                        <p>${product.name}</p>
-                        <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                        <button class='btn btn-dark addToCart-btn'
-                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                        Adicionar ao carrinho
-                        </button>
+                            <p>${product.name}</p>
+                            <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                            <div class='addToCart'>
+                                <button class='btn btn-dark'
+                                    onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
                         </div>
                     </div>
                             `
@@ -41,17 +43,19 @@ const getProducts = ()=>{
 
                 document.getElementById('productsGrid').innerHTML = filteredAndOrderedList.map(product=>{
                     return `
-                    <div class='border border-3 rounded card-container'>
-                        <img src=${product.photo} width=350 alt="Imagem do produto">
-                        <div class='card-info'>
-                        <p>${product.name}</p>
-                        <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                        <button class='btn btn-dark addToCart-btn'
-                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                        Adicionar ao carrinho
-                        </button>
+                        <div class='border border-3 rounded card-container'>
+                            <img src=${product.photo} width=350 alt="Imagem do produto">
+                            <div class='card-info'>
+                                <p>${product.name}</p>
+                                <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                                <div class='addToCart'>
+                                    <button class='btn btn-dark'
+                                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                                        Adicionar ao carrinho
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                             `
                 }).join('')
 
@@ -62,17 +66,19 @@ const getProducts = ()=>{
 
                 document.getElementById('productsGrid').innerHTML = filteredAndOrderedList.map(product=>{
                     return `
-                    <div class='border border-3 rounded card-container'>
+                        <div class='border border-3 rounded card-container'>
                         <img src=${product.photo} width=350 alt="Imagem do produto">
                         <div class='card-info'>
-                        <p>${product.name}</p>
-                        <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                        <button class='btn btn-dark addToCart-btn'
-                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                        Adicionar ao carrinho
-                        </button>
+                            <p>${product.name}</p>
+                            <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                            <div class='addToCart'>
+                                <button class='btn btn-dark'
+                                    onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                        </div>
                             `
                 }).join('')
 
@@ -84,12 +90,14 @@ const getProducts = ()=>{
                     <div class='border border-3 rounded card-container'>
                         <img src=${product.photo} width=350 alt="Imagem do produto">
                         <div class='card-info'>
-                        <p>${product.name}</p>
-                        <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                        <button class='btn btn-dark addToCart-btn'
-                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                        Adicionar ao carrinho
-                        </button>
+                            <p>${product.name}</p>
+                            <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                            <div class='addToCart'>
+                                <button class='btn btn-dark'
+                                    onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
                         </div>
                     </div>
                             `
@@ -103,12 +111,14 @@ const getProducts = ()=>{
             <div class='border border-3 rounded card-container'>
                 <img src=${product.photo} width=350 alt="Imagem do produto">
                 <div class='card-info'>
-                <p>${product.name}</p>
-                <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                <button class='btn btn-dark addToCart-btn'
-                onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                Adicionar ao carrinho
-                </button>
+                    <p>${product.name}</p>
+                    <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                    <div class='addToCart'>
+                        <button class='btn btn-dark'
+                            onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                            Adicionar ao carrinho
+                        </button>
+                    </div>
                 </div>
             </div>
                     `
@@ -157,18 +167,17 @@ const onRemoveProductFromCart = (productId) => {
 
 const getProductsInCart = ()=>{
     fetch(`${url}/cart`).then(res => res.json()).then(data=>{
-        document.getElementById('cartContainer').innerHTML = data.reduce((accumulator ,product)=>{
+        document.getElementById('cartContainer').innerHTML = data.map(product=>{
             return `
-            ${accumulator}
-            <div class='item-container'>
-            <p>${product.quantity}x ${product.name}</p>
-            <button class='btn btn-dark'
-            onclick="onRemoveProductFromCart('${product.id}')">
-            Remover
-            </button>
-            </div>
+                <div class='item-container'>
+                    <p>${product.quantity}x ${product.name}</p>
+                    <button class='btn btn-dark'
+                    onclick="onRemoveProductFromCart('${product.id}')">
+                    Remover
+                    </button>
+                </div>
             `
-        }, '')
+        }).join('')
         
         let totalValue = 0
 

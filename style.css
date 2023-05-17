@@ -1,18 +1,29 @@
-.container{
+body{
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    padding: 16px;
-    margin: 0;
-    @media(max-width: 700px){
+    grid-template-areas: 
+    "filters main cart";
+    grid-template-columns: 20vw 1fr 20vw;
+    margin: 10px 20px;
+
+    @media(max-width: 600px){
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 }
 
 div .filters{
+    grid-area: filters;
     width: 300px;
     margin-left: 0;
+}
+
+.products-container{
+    grid-area: main;
+}
+
+div .shoppingCart{
+    grid-area: cart;
+    width: 260px;
 }
 
 select{
@@ -20,50 +31,44 @@ select{
     margin-bottom: 10px;
 }
 
-div .shoppingCart{
-    width: 260px;
-}
 
 .products-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    @media(max-width: 700px){
-        text-align: center;
+}
+
+#qnt-products{
+    @media(max-width: 600px){
+        margin: auto;
     }
 }
 
 .producsts-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 22px;
     padding: 16px;
+
     @media(max-width: 600px){
         display: flex;
         flex-direction: column;
     }
 }
 
-.card-container{
-    display: flex;
-    flex-direction: column;
-    @media(max-width: 700px){
-        img {
-            height: 200px;
-        }
+.card-info{
+    padding: 10px;
+}
+
+.card-container img{
+    @media(max-width: 600px){
+        width: 322px;
     }
 }
 
-.card-info{
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-}
-
-.addToCart-btn{
-    align-self: center;
-    margin-top: 4px;
+.card-container .addToCart{
+    text-align: center;
 }
 
 .cart-container{

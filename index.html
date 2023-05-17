@@ -10,34 +10,33 @@
     <title>E-Commerce</title>
 </head>
 <body>
-    <div class="container">
-        <div class='border border-2 p-2 shadow-lg rounded filters'>
-          <h3>Filtros </h3>
-            Valor mínimo:&nbsp;
-            <input class='form-control' id="minValue" type="number" min='1'/>
-            Valor máximo:&nbsp;
-            <input class='form-control' id="maxValue" type="number" min='1'/>
-            <select class='form-select' id="sort-select">
-              <option value='' defaultValue>Ordenação</option>
-              <option value='CRESCENTE'>Crescente</option>
-              <option value='DECRESCENTE'>Decrescente</option>
-            </select>
-            Busca por nome:&nbsp;
-            <input class='form-control' id="searchByName" type="text">
-        </div>
-        <div class="products-container">
-            <div class="products-header">
-              <p id="qnt-products"></p>
-            </div>
-            <div class="producsts-grid" id="productsGrid"></div>
-        </div>
-
-        <div class="border border-2 shadow-lg rounded p-2 shoppingCart">
-          <h3>Carrinho:</h3>
-          <div class="cart-container" id="cartContainer"></div><br>
-          <p id="total"></p>
-        </div>
+    <div class='border border-2 p-2 shadow-lg rounded filters'>
+      <h3>Filtros </h3>
+      Valor mínimo:&nbsp;
+      <input class='form-control' id="minValue" type="number" min='1'/>
+      Valor máximo:&nbsp;
+      <input class='form-control' id="maxValue" type="number" min='1'/>
+      <select class='form-select' id="sort-select">
+        <option value='' defaultValue>Ordenação</option>
+        <option value='CRESCENTE'>Crescente</option>
+        <option value='DECRESCENTE'>Decrescente</option>
+      </select>
+      Busca por nome:&nbsp;
+      <input class='form-control' id="searchByName" type="text">
     </div>
-</body>
+    
+    <div class="products-container">
+      <div class="products-header">
+        <p id="qnt-products"></p>
+      </div>
+      <div class="producsts-grid" id="productsGrid"></div>
+    </div>
+    
+    <div class="border border-2 shadow-lg rounded p-2 shoppingCart">
+      <h3>Carrinho:</h3>
+      <div class="cart-container" id="cartContainer"></div><br>
+      <p id="total"></p>
+    </div>
+  </body>
     <script src="script.js"></script>
 </html>
