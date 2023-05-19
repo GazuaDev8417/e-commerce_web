@@ -63,7 +63,7 @@ select{
 
 .card-container img{
     @media(max-width: 600px){
-        width: 322px;
+        width: 465px;
     }
 }
 
@@ -73,7 +73,7 @@ select{
 
 .cart-container{
     display: grid;
-    gap: 8px;
+    gap: 8px;    
 }
 
 .item-container{
@@ -81,4 +81,9 @@ select{
     grid-auto-flow: column;
     gap: 4px;
     align-items: center;
+
+    @media(max-width: 800px){
+        display: flex;
+        flex-direction: column;
+    }
 }

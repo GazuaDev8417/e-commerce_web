@@ -172,8 +172,8 @@ const getProductsInCart = ()=>{
                 <div class='item-container'>
                     <p>${product.quantity}x ${product.name}</p>
                     <button class='btn btn-dark'
-                    onclick="onRemoveProductFromCart('${product.id}')">
-                    Remover
+                        onclick="onRemoveProductFromCart('${product.id}')">
+                        Remover
                     </button>
                 </div>
             `
