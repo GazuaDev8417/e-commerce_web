@@ -67,17 +67,17 @@ const getProducts = ()=>{
                 document.getElementById('productsGrid').innerHTML = filteredAndOrderedList.map(product=>{
                     return `
                         <div class='border border-3 rounded card-container'>
-                        <img src=${product.photo} width=350 alt="Imagem do produto">
-                        <div class='card-info'>
-                            <p>${product.name}</p>
-                            <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
-                            <div class='addToCart'>
-                                <button class='btn btn-dark'
-                                    onclick='onAddProductToCart(${JSON.stringify(product)})'>
-                                    Adicionar ao carrinho
-                                </button>
+                            <img src=${product.photo} width=350 alt="Imagem do produto">
+                            <div class='card-info'>
+                                <p>${product.name}</p>
+                                <p>R$ ${Math.floor(Math.random() * 1000)},00</p>
+                                <div class='addToCart'>
+                                    <button class='btn btn-dark'
+                                        onclick='onAddProductToCart(${JSON.stringify(product)})'>
+                                        Adicionar ao carrinho
+                                    </button>
+                                </div>
                             </div>
-                        </div>
                         </div>
                             `
                 }).join('')

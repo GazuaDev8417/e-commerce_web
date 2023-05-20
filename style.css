@@ -63,7 +63,13 @@ select{
 
 .card-container img{
     @media(max-width: 600px){
-        width: 465px;
+        width: 300px;
+    }
+}
+
+.card-container{
+    @media(max-width: 600px){
+        text-align: center;
     }
 }
 
