@@ -63,7 +63,7 @@ select{
 
 .card-container img{
     @media(max-width: 600px){
-        width: 300px;
+        width: 270px;
     }
 }
 
