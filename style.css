@@ -5,6 +5,10 @@ body{
     grid-template-columns: 20vw 1fr 20vw;
     margin: 10px 20px;
 
+    @media(max-width: 800px){
+        grid-template-columns: 30vw 1fr 30vw;
+    }
+
     @media(max-width: 600px){
         display: flex;
         flex-direction: column;
@@ -90,6 +94,18 @@ select{
 
     @media(max-width: 800px){
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @media(max-width: 700px){
         flex-direction: column;
+    }
+
+    @media(max-width: 600px){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 20px;
     }
 }
