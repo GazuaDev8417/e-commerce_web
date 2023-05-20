@@ -6,10 +6,6 @@ body{
     margin: 10px 20px;
 
     @media(max-width: 800px){
-        grid-template-columns: 30vw 1fr 30vw;
-    }
-
-    @media(max-width: 600px){
         display: flex;
         flex-direction: column;
     }
@@ -55,7 +51,7 @@ select{
     gap: 22px;
     padding: 16px;
 
-    @media(max-width: 600px){
+    @media(max-width: 800px){
         display: flex;
         flex-direction: column;
     }
@@ -66,13 +62,13 @@ select{
 }
 
 .card-container img{
-    @media(max-width: 600px){
-        width: 270px;
+    @media(max-width: 800px){
+        width: 100%;
     }
 }
 
 .card-container{
-    @media(max-width: 600px){
+    @media(max-width: 800px){
         text-align: center;
     }
 }
@@ -81,31 +77,17 @@ select{
     text-align: center;
 }
 
+.card-container .addToCart button{
+    width: 90%;
+}
+
 .cart-container{
     display: grid;
     gap: 8px;    
 }
 
 .item-container{
-    display: grid;
-    grid-auto-flow: column;
-    gap: 4px;
+    display: flex;
     align-items: center;
-
-    @media(max-width: 800px){
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    @media(max-width: 700px){
-        flex-direction: column;
-    }
-
-    @media(max-width: 600px){
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 20px;
-    }
+    justify-content: space-between;
 }
